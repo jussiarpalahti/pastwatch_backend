@@ -52,7 +52,7 @@ django-compressor==2.1
 
 
 # Your custom requirements go here
-djangorestframework==3.4.0
-dynamic-rest==1.5.0
+djangorestframework<3.5.0
+dynamic-rest<1.6.0
 coreapi==1.32.3
-django-rest-swagger==2.0.5
+django-rest-swagger<2.1
