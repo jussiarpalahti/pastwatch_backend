@@ -1,4 +1,5 @@
 
+import uuid
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.contrib.postgres.fields import HStoreField, JSONField, ArrayField
@@ -15,8 +16,9 @@ class BaseModel(TimeStampedModel):
     class Meta:
         abstract = True
 
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=1024)
-    tag = models.ManyToManyField('Tag', blank=True)
+    tags = models.ManyToManyField('Tag', blank=True)
 
     def __str__(self):
         return "{0}".format(self.name)
@@ -97,6 +99,7 @@ class Tag(TimeStampedModel):
     Tag is many to many properties for multiple objects
     to share same information properties
     """
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=1024)
     type = models.ForeignKey('Type', blank=True, null=True)
     props = HStoreField(blank=True, null=True)
@@ -107,6 +110,7 @@ class Tag(TimeStampedModel):
 
 
 class Type(TimeStampedModel):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=30)
 
     def __str__(self):
