@@ -45,10 +45,13 @@ redis>=2.10.0
 
 
 
-rcssmin==1.0.6 
+rcssmin==1.0.6
 django-compressor==2.1
 
 
 
 
 # Your custom requirements go here
+djangorestframework==3.4.0
+dynamic-rest==1.5.0
+

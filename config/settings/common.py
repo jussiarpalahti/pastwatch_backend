@@ -38,7 +38,9 @@ THIRD_PARTY_APPS = (
     'crispy_forms',  # Form layouts
     'allauth',  # registration
     'allauth.account',  # registration
-    'allauth.socialaccount',  # registration
+    'allauth.socialaccount',  # registration,
+    'rest_framework',
+    'dynamic_rest',
 )
 
 # Apps specific for this project go here.
@@ -46,6 +48,7 @@ LOCAL_APPS = (
     # custom users app
     'pastwatch_backend.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'watcher'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
